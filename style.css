@@ -29,6 +29,18 @@
   --f-title: "FivoSans";
   --b-s-card: 5px 5px 16px 0px rgba(0, 0, 0, 0.4);
 }
+:nth-child(1) {
+  --nth-child: 0;
+}
+:nth-child(2) {
+  --nth-child: 1;
+}
+:nth-child(3) {
+  --nth-child: 2;
+}
+:nth-child(4) {
+  --nth-child: 3;
+}
 body,
 html {
   margin: 0;
@@ -119,7 +131,7 @@ p.text {
 nav {
   z-index: 100;
   position: fixed;
-  top: 0;
+  top: -120px;
   left: 0;
   right: 0;
   width: auto;
@@ -131,6 +143,7 @@ nav {
   height: 130px;
   background-color: var(--b-primary);
   box-shadow: 0px 3px 26px 5px rgba(56, 56, 56, 0.1);
+  animation: init-nav 0.5s ease-in-out 0.4s forwards;
 }
 nav .logo {
   height: 70%;
@@ -159,10 +172,21 @@ nav .logo {
   border-bottom: 3px solid var(--c-tertiary);
   padding: 0 0.4%;
 }
+@keyframes init-nav {
+  0% {
+    opacity: 0;
+    top: -120px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
 /* *----------------- */
 
 /* *PRIMARY-SECTION */
 .primary-section {
+  overflow: hidden;
   margin-top: 130px;
   min-height: 90vh;
   display: grid;
@@ -175,10 +199,12 @@ nav .logo {
 .img-container img {
   position: absolute;
   bottom: 0;
-  right: -150px;
+  right: 0px;
+  opacity: 0;
   height: 90vh;
   width: auto;
   object-fit: contain;
+  animation: init 0.5s ease-in-out calc(var(--nth-child) * 0.2s) forwards;
 }
 .subtitle {
   color: var(--c-f-subtitle);
@@ -200,6 +226,48 @@ nav .logo {
   width: 250px;
   height: auto;
   object-fit: cover;
+}
+.t-a-init {
+  opacity: 0;
+  animation: init-text 0.5s ease-in-out calc(var(--nth-child) * 0.3s) forwards;
+}
+.t-a-init2 {
+  opacity: 0;
+  animation: init-text 0.5s ease-in-out 0.6s forwards;
+}
+.l-a-init {
+  opacity: 0;
+  animation: init-logo 0.5s ease-in-out 0.6s forwards;
+}
+@keyframes init {
+  0% {
+    opacity: 0;
+    right: 0px;
+  }
+  100% {
+    opacity: 1;
+    right: -150px;
+  }
+}
+@keyframes init-text {
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes init-logo {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 /* *----------------- */
 
