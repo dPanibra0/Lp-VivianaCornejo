@@ -485,6 +485,7 @@ nav .logo {
 /* *PROFILES SECTION */
 
 .profiles-section {
+  overflow: hidden;
   position: relative;
   min-height: 100vh;
   background-color: var(--b-primary);
@@ -501,15 +502,16 @@ nav .logo {
 }
 .profiles-container {
   height: 520px;
-  width: fit-content;
+  width: 90%;
   margin: 4% auto;
   display: grid;
-  grid-template-columns: repeat(3, 380px);
+  grid-template-columns: repeat(3, 1fr);
   gap: 70px;
 }
 .profile {
   position: relative;
   overflow: hidden;
+  max-width: 400px;
 }
 .profile img {
   height: 100%;
@@ -953,9 +955,13 @@ footer {
   color: var(--c-f-navc);
 }
 /* *----------------- */
-
+@media (max-width: 1200px) {
+  .logo-footer-content img {
+    height: 100px;
+  }
+}
 /* *SCREEN 720p */
-@media (max-width: 700px) {
+@media (max-width: 780px) {
   /* *GENERAL STYLES */
   .principal-title {
     display: block;
@@ -1007,8 +1013,9 @@ footer {
     overflow: hidden;
   }
   .slideshow-container.articles {
-    max-width: 100%;
-    height: 500px;
+    max-width: 720px;
+    height: auto;
+    margin: auto;
   }
 
   .mySlides {
@@ -1019,7 +1026,8 @@ footer {
   .mySlidesA {
     position: relative;
     display: none;
-    height: 480px;
+    height: auto;
+    padding-bottom: 0px;
   }
   /* Next & previous buttons */
   .prev,
@@ -1308,6 +1316,7 @@ footer {
   }
   .profile {
     height: 60vh;
+    margin: 0 none;
     position: relative;
     overflow: hidden;
   }
@@ -1319,7 +1328,7 @@ footer {
   }
   .profile-content {
     position: absolute;
-    width: 300px;
+    width: 80%;
     bottom: 5%;
     left: 50%;
     z-index: 10;
@@ -1380,7 +1389,7 @@ footer {
     margin: 3% 0;
     display: grid;
     grid-template-columns: repeat(3, 70vw);
-    gap: 70px;
+    gap: 100px;
     padding-left: 5vw;
   }
   .t-cards-container {
@@ -1419,18 +1428,22 @@ footer {
   .articles-section {
     min-height: 0vh;
     background-color: var(--b-tertiary);
-    padding-bottom: 10%;
   }
   .a-cards-container {
-    width: fit-content;
-    margin: 3% auto 0;
+    width: auto;
+    overflow: hidden;
+    margin: 3% auto 5%;
     display: grid;
-    grid-template-columns: repeat(3, 85vw);
-    gap: 40px;
-    padding-left: 8vw;
+    grid-template-columns: 1fr;
+    row-gap: 500px;
+    height: 470px;
   }
   .a-card {
+    min-width: 180px;
+    max-width: 400px;
     padding-bottom: 3%;
+    max-height: 450px;
+    margin: auto 5%;
   }
   .a-card img {
     width: 100%;
@@ -1453,6 +1466,10 @@ footer {
   .news-container {
     grid-template-columns: 1fr;
   }
+  .n-card {
+    max-width: 400px;
+    margin: auto;
+  }
   .n-card .detail span:nth-child(2) {
     font-size: 0.8em;
   }
@@ -1473,11 +1490,11 @@ footer {
   .offer-img-container img {
     height: auto;
     width: 80vw;
+    max-width: 400px;
     object-fit: cover;
     position: absolute;
     bottom: -100px;
-    right: none;
-    left: -14vw;
+    right: 44vw;
     z-index: 1;
   }
   .offer-title-container {
@@ -1489,7 +1506,7 @@ footer {
   .offer-title-container h1 {
     position: absolute;
     top: -30vw;
-    right: 10px;
+    left: 50vw;
     font-size: 1.5em;
     margin: 0;
     color: var(--c-primary) !important;
