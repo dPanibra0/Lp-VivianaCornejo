@@ -55,23 +55,20 @@ function showSlidesA(n) {
 }
 window.addEventListener("load", () => {
   setTimeout(() => {
-    console.log(323);
     showSlidesA(slideIndexA);
     showSlides(slideIndex);
   }, 500);
 
   var optionsNav = document.getElementById("options-nav");
-  console.log(optionsNav);
-  var btns = optionsNav.getElementsByTagName("a")
+  var btns = optionsNav.getElementsByTagName("a");
   for (var i = 0; i < btns.length; i++) {
-    console.log(btns[i]);
-    btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("selected");
-    current[0].className = current[0].className.replace("selected", "");
-    this.className += "selected";
+    btns[i].addEventListener("click", function (e) {
+      e.preventDefault();
+      var current = document.getElementsByClassName("selected");
+      current[0].className = current[0].className.replace("selected", "");
+      this.className += "selected";
     });
   }
-
 });
 function nav() {
   var optionDiv = document.getElementById("options-nav");
@@ -81,4 +78,3 @@ function nav() {
   navIcon.classList.toggle("hide");
   timesIcon.classList.toggle("hide");
 }
-

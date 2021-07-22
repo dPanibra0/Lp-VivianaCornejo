@@ -668,6 +668,18 @@
     <div class="created-by">
         <h2>Creado por <a href="">Alma Quinta</a> y <a href="">SixLab</a></h2>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $("a").click(function (e) {
+            e.preventDefault();
+            var section = $(this).attr('href');
+            $("html, body").animate({
+              scrollTop: $(section).offset().top
+            }, 700, function () {
+              window.location.hash = section;
+            });
+          });
+    </script>
 </body>
 
 </html>
