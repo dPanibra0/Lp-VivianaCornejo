@@ -842,6 +842,7 @@ nav .logo {
   position: relative;
 }
 .offer-img-container img {
+  max-height: 900px;
   height: 110vh;
   z-index: 10;
   width: auto;
@@ -1004,7 +1005,22 @@ footer {
   .stuffed {
     min-height: 50px;
   }
-
+  .prev {
+    left: 1%;
+  }
+  /* Position the "next button" to the right */
+  .next {
+    right: 1%;
+  }
+  .offer-section {
+    height: 660px;
+  }
+  .line-title-offer {
+    top: 500px;
+  }
+  .btn-wsp {
+    bottom: 20px;
+  }
   /* *----------------- */
 }
 /* *----------------- */
@@ -1023,6 +1039,9 @@ footer {
   .nav-options a:nth-last-child(1) {
     margin: 0 0 0 2%;
   }
+  .offer-title h1 {
+    font-size: 5em;
+  }
   .footer-container {
     width: 100%;
   }
@@ -1035,7 +1054,36 @@ footer {
 }
 @media (max-width: 1080px) {
   .wsp-btn-container {
-    bottom: -130px;
+    bottom: -80px;
+  }
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 80%;
+  }
+  .about-me-section {
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 3% 0;
+  }
+  .ofresco-m {
+    display: block;
+  }
+  .about-me-content .p-response {
+    margin: 0 10%;
+  }
+  .ofresco {
+    display: none;
+  }
+  .about-me-imgs {
+    margin-top: 5%;
+    position: relative;
+    height: 600px;
+  }
+  .offer-img-container img {
+    max-height: 700px;
   }
 }
 @media (max-width: 950px) {
@@ -1285,9 +1333,9 @@ footer {
     position: relative;
     height: 400px;
     min-height: 0px;
-    margin-top:0;
+    margin-top: 0;
     min-height: 350px;
-    grid-template-columns: 45vw 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   .img-container {
     position: relative;
@@ -1322,12 +1370,15 @@ footer {
     }
     100% {
       opacity: 1;
-      right: 0;
+      right: -5vw;
     }
   }
   .wsp-btn-container {
+    width: 20px;
+    min-width: none;
     transform: scale(0.75);
-    bottom: -5px;
+    bottom: -7px;
+    right: -50px;
   }
   /* *----------------- */
 
@@ -1547,7 +1598,7 @@ footer {
     max-width: 400px;
     padding-bottom: 3%;
     max-height: 450px;
-    margin: auto 5%;
+    margin: auto;
   }
   .a-card img {
     width: 100%;
@@ -1609,9 +1660,9 @@ footer {
   }
   .offer-title-container h1 {
     position: absolute;
-    top: -30vw;
+    top: -200px;
     left: 50vw;
-    font-size: 1.5em;
+    font-size: 2.5em;
     margin: 0;
     color: var(--c-primary) !important;
   }
@@ -1619,9 +1670,9 @@ footer {
     position: absolute;
     width: 70px;
     height: 5px;
-    top: -25vw;
-    left: none;
-    right: 0;
+    top: -80px;
+    left: inherit;
+    right: 7vw;
   }
   .btn-wsp {
     position: absolute;
@@ -1732,3 +1783,35 @@ footer {
   /* *----------------- */
 }
 /* *Screnn 720----------------- */
+
+@media (max-width: 480px) {
+  .primary-section {
+    height: 350px;
+    /* grid-template-columns: 55vw 1fr; */
+  }
+  .img-container img {
+    height: 250px;
+  }
+  .viviana-logo {
+    width: 30vw;
+  }
+  .remax-logo {
+    width: 20vw;
+  }
+  .wsp-btn-container {
+    bottom: -15px;
+    right: -90px;
+    transform: scale(0.5);
+  }
+  .a-card {
+    margin: auto 2%;
+  }
+  .offer-title-container h1 {
+    top: -100px;
+    font-size: 1.6em;
+  }
+  .line-title-offer {
+    right: 2vw;
+    top: -22px;
+  }
+}
